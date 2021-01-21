@@ -13,7 +13,7 @@
 
   <nav id="main">
     <ul>
-      <li class="logo"><a href="#">LOST.</a></li>
+      <li class="logo" id="logo"><a href="#">LOST.</a></li>
       <li><a href="#">Home</a></li>
       <li><a href="#">About</a></li>
       <li><a href="#">Images</a></li>
@@ -54,7 +54,20 @@
   </div>
 
 <script>
-
+let nav= document.getElementById("main")
+let navTop= nav.offsetTop
+let log = document.querySelector('#logo')
+function fexNav() {
+  if (window.scrollY >= navTop){
+  nav.classList.add('fex-nav');
+  log.style.maxWidth="200px";
+}else if (window.scrollY <navTop){
+  nav.classList.remove('fex-nav')
+  log.style.maxWidth="0";
+}
+}
+fexNav();
+window.addEventListener('scroll',fexNav)
 </script>
 
 </body>
