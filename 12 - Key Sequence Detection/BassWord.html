@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+  <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
+</head>
+<body>
+  <style>
+    body{
+      transition: all 3S;
+    }
+  </style>
+<script>
+  let bassword = "omnia"
+  let array = []
+  function chickBassword (e){
+    let word = e.key
+    array.push(word)
+    array.splice(-bassword.length-1,array.length-bassword.length)
+    if(array.join('').includes(bassword)){
+      cornify_add();
+   document.body.style.backgroundColor="#BF1FE0"
+    }
+ 
+  }
+  window.addEventListener('keyup',chickBassword)
+</script>
+</body>
+</html>
