@@ -73,7 +73,7 @@
       transform-origin:100%;
       transform: rotate(90deg);
       transition: all 0.5s;
-transition-timing-function: cubic-bezier(1, 0, 0, 1);
+transition-timing-function: ease-in-out ;
     }
 
   </style>
@@ -84,13 +84,13 @@ const minutsHand=document.querySelector('.min-hand')
 const secundsHand=document.querySelector('.second-hand')
 const clockCircle=document.querySelector(".clock")
 function calculeTime(){
-const now = new Date()
+  const now = new Date()
 const second = now.getSeconds()
 const minuts=now.getMinutes()
+  const secondsDeg =((second / 60) *360)
+const minutsDeg=((minuts/60)*360)
 const hours=now.getHours()
-const secondsDeg =((second / 60) *360)+90
-const minutsDeg=((minuts/60)*360)+90
-const hourDeg=((hours/60)*360)+90
+const hourDeg=((hours/60)*360)
 minutsHand.style.transform=`rotate(${secondsDeg}deg)`
   secundsHand.style.transform=`rotate(${minutsDeg}deg)`
   secundsHand.style.transform=`rotate(${hourDeg}deg)`
